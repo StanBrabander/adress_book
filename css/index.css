@@ -6,13 +6,18 @@ body {
 
 .grid {
   display: grid;
-  grid-template-rows: 10vh 5vh auto 10vh;
+  grid-template-rows: 5vh 5vh auto 10vh;
   height: 100%;
+  width: 100%;
 }
 
 .header {
   grid-column: 1/4;
   grid-row: 2/3;
+}
+
+.search__bar {
+  width: 50vw;
 }
 
 .user {
@@ -30,11 +35,14 @@ body {
 .contact__list li {
   display: flex;
   flex-direction: row;
+  align-items: center;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
+  width: 100vw;
+  padding: 10px 0px 10px 10px;
 }
 .contact__list span {
-  color: lightskyblue;
+  color: black;
   display: flex;
   flex-direction: column;
 }
@@ -45,7 +53,7 @@ body {
 .contact__list .image {
   width: 50px;
   height: 50px;
-  margin-bottom: 20px;
+  margin: 7px;
 }
 
 /*# sourceMappingURL=index.css.map */
