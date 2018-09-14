@@ -1,0 +1,26 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 10vh 15vh auto 10vh;
+  height: 100%;
+}
+
+.header {
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+
+.user {
+  text-align: right;
+}
+
+.image {
+  float: left;
+}
+
+/*# sourceMappingURL=index.css.map */
