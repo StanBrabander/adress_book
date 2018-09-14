@@ -1,5 +1,5 @@
 let data;
-fetch('https://randomuser.me/api/?results=1&format=json').then(response => {
+fetch('https://randomuser.me/api/?results=5&format=json').then(response => {
     return response.json();
 }).then(dataResponse => {
 	data = dataResponse;
@@ -15,23 +15,28 @@ function dataLength() {
     // the data.results wil become a item and the item wil contain the user value
     for(const item of data.results){
     	// select class from html file
-    	const mainBody = document.querySelector(".main-body");
+        const list = document.querySelector('.contact__list');
     	const user = document.createElement("div");
     	const p = document.createElement("p");
         const image = document.createElement("img");
+        const li = document.createElement('li');
+        const span = document.createElement('span');
 
         user.classList.add("user");
         image.classList.add("image");
-        p.classList.add("name");
 
 
         // load in the first name, last name and phone number
-    	p.innerText = `${item.name.first} ${item.name.last} ${item.phone}`;
+        span.innerHTML = `${item.name.first} ${item.name.last}`;
+        p.innerHTML = item.cell;
     	// load in the profile picture
     	image.src = item.picture.large;
     	// place them in the html
-		user.appendChild(p);
-        user.appendChild(image);
-    	mainBody.appendChild(user);
+        list.appendChild(li);
+        li.appendChild(image);
+        li.appendChild(span);
+        span.appendChild(p);
+
+
 	}
 }
